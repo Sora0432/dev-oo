@@ -9,10 +9,10 @@ class RandomSequence {
         int nbrDeGeneration, limite;
 
         try {
-            nbrDeGeneration = Integer.parseInt(args[0]);
-            limite = Integer.parseInt(args[1]);
+            nbrDeGeneration = Integer.parseInt(nbr);
+            limite = Integer.parseInt(lim);
             for(int i = 0; i < nbrDeGeneration; i++) {
-                System.out.println(GENERATOR.nextInt(Integer.parseInt(limite+1)));
+                System.out.println(GENERATOR.nextInt(limite+1));
             }
         } catch (NumberFormatException e) {
             System.out.println(ERROR_MESSAGE);
@@ -24,10 +24,10 @@ class RandomSequence {
         double nbrDeGeneration, limite;
 
         try {
-            nbrDeGeneration = Double.parseDouble(args[0]);
-            limite = Double.parseDouble(args[1]);
+            nbrDeGeneration = Double.parseDouble(nbr);
+            limite = Double.parseDouble(lim);
             for(int i = 0; i < nbrDeGeneration; i++) {
-                System.out.println(GENERATOR.nextDouble(Double.parseDouble(limite+1)));
+                System.out.println(GENERATOR.nextDouble(limite+1));
             }
         } catch (NumberFormatException e) {
             System.out.println(ERROR_MESSAGE);
