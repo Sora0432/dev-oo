@@ -27,7 +27,7 @@ class RandomSequence {
             nbrDeGeneration = Double.parseDouble(nbr);
             limite = Double.parseDouble(lim);
             for(int i = 0; i < nbrDeGeneration; i++) {
-                System.out.println(GENERATOR.nextDouble(limite+1));
+                System.out.println(GENERATOR.nextDouble(limite));
             }
         } catch (NumberFormatException e) {
             System.out.println(ERROR_MESSAGE);
