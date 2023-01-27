@@ -8,5 +8,4 @@ class Parameter {
             System.out.println("(" + (i+1) + ") " + args[i]);
         }
     }
-
 }

@@ -7,6 +7,5 @@ class UseSecretWord {
         System.out.println(s.getSecretWord());
         System.out.println(s.getSecretWord());
         System.out.println(s.getSecretWord());
-    }
-    
+    }   
 }

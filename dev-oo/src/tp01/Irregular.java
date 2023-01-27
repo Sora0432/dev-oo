@@ -2,36 +2,35 @@ import java.util.Random;
 
 class Irregular {
     //Attributes
-    int[][] tab;
+    int[][] tableau;
+    final Random GENERATOR = new Random();
     final int ORIGIN = -10;
     final int LIMIT = 10;
 
     //Constructor
     Irregular(int[] lineSize) {
-        this.tab = new int[lineSize.length][];
+        this.tableau = new int[lineSize.length][];
         for(int idxL = 0; idxL < lineSize.length; idxL++) {
-            this.tab[idxL] = new int[lineSize[idxL]];
+            this.tableau[idxL] = new int[lineSize[idxL]];
         }
     }
 
     //Methods
     void randomFilling() {
-        Random generator = new Random();
-
-        for(int idxL = 0; idxL < this.tab.length; idxL++) {
-            for(int idxC = 0; idxC < this.tab[idxL].length; idxC++) {
-                this.tab[idxL][idxC] = generator.nextInt(ORIGIN, LIMIT);
+        for(int idxL = 0; idxL < this.tableau.length; idxL++) {
+            for(int idxC = 0; idxC < this.tableau[idxL].length; idxC++) {
+                this.tableau[idxL][idxC] = this.generator.nextInt(ORIGIN, LIMIT);
             }
         }
     }
 
     String display() {
         String str = "";
-        for(int idxL = 0; idxL < this.tab.length; idxL++) {
-            for(int idxC = 0; idxC < this.tab[idxL].length; idxC++) {
-                str += this.tab[idxL][idxC] + " ";
+        for(int idxL = 0; idxL < this.tableau.length; idxL++) {
+            for(int idxC = 0; idxC < this.tableau[idxL].length; idxC++) {
+                str += this.tableau[idxL][idxC] + " ";
             }
-            if (!(idxL == this.tab.length-1)) {
+            if (!(idxL == this.tableau.length-1)) {
                 str += "\n";
             }
         }
@@ -41,11 +40,11 @@ class Irregular {
     boolean isCommon(int element) {
         int idxL = 0, idxC;
         boolean isCommon = true;
-        while(idxL < this.tab.length && isCommon) {
+        while(idxL < this.tableau.length && isCommon) {
             idxC = 0;
             isCommon = false;
-            while(idxC < this.tab[idxL].length && !isCommon) {
-                isCommon = (element == this.tab[idxL][idxC]);
+            while(idxC < this.tableau[idxL].length && !isCommon) {
+                isCommon = (element == this.tableau[idxL][idxC]);
                 idxC++;
             }
             idxL++;
@@ -56,10 +55,10 @@ class Irregular {
     boolean existCommon() {
         int idxL = 0, idxC;
         boolean existCommon = false;
-        while(idxL < this.tab.length && !existCommon) {
+        while(idxL < this.tableau.length && !existCommon) {
             idxC = 0;
-            while(idxC < this.tab[idxL].length && !existCommon) {
-                existCommon = isCommon(this.tab[idxL][idxC]);
+            while(idxC < this.tableau[idxL].length && !existCommon) {
+                existCommon = isCommon(this.tableau[idxL][idxC]);
                 idxC++;
             }
             idxL++;
