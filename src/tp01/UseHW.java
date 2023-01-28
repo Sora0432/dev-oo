@@ -1,5 +1,4 @@
 package tp01;
-
 import util.HW;
 
 class UseHW {

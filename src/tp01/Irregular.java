@@ -21,7 +21,7 @@ class Irregular {
     void randomFilling() {
         for(int idxL = 0; idxL < this.tableau.length; idxL++) {
             for(int idxC = 0; idxC < this.tableau[idxL].length; idxC++) {
-                this.tableau[idxL][idxC] = this.GENERATOR.nextInt(ORIGIN, LIMIT);
+                this.tableau[idxL][idxC] = this.GENERATOR.nextInt(LIMIT) - this.ORIGIN;
             }
         }
     }
