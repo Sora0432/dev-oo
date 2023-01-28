@@ -1,21 +1,27 @@
 package sae2;
 
+import fr.ulille.but.sae2_02.donnees.DonneesPourTester;
+
 class TestSae {
     // Attributes
     String[][] students;
 
     // Constructor
-    TestSae(String[][] array) {
-        this.students = array;
+    TestSae() {
+        this.students = DonneesPourTester.studentData;
     }
 
-
-    public static void main(String[] args) {
-        TestSae test = new TestSae(new String[0][0]);
-        for (int i = 0; i < test.students.length; i++) {
-            for (int j = 0; j < test.students[i].length; j++) {
-                System.out.println(test.students[i][j]);
+    // Methods
+    public String toString() {
+        String str = "";
+        for (int i = 0; i < this.students.length; i++) {
+            for (int j = 0; j < this.students[i].length; j++) {
+                str += this.students[i][j] + " ";
             }
+            str += "\n";
         }
+        return str;
     }
+
+
 }
